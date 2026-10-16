@@ -3,87 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farmacia Medisalud | Yotoco</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Iconos de FontAwesome -->
+    <title>Farmacia Medisalud | Mediacanoa, Yotoco</title>
+    <meta name="description" content="Farmacia Medisalud en Mediacanoa, barrio Hernando García, Yotoco. Medicamentos con surtido Copidrogas, inyectología y orientación farmacéutica. Consulta disponibilidad por WhatsApp.">
+    <meta name="theme-color" content="#0F5B46">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Encabezado y Barra de Navegación -->
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <!-- Encabezado -->
     <header class="header">
-        <div class="container nav-container">
-            <a href="#" class="logo">
-                <i class="fa-solid fa-staff-snake"></i>
+        <div class="container nav">
+            <a href="#inicio" class="logo" aria-label="Farmacia Medisalud, inicio">
+                <span class="logo-cross" aria-hidden="true"></span>
                 <span>Medisalud</span>
             </a>
-            <nav class="navbar">
-                <a href="#inicio">Inicio</a>
+
+            <button class="menu-toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav id="menu" class="menu">
                 <a href="#servicios">Servicios</a>
-                <a href="#contacto" class="btn-contacto">Contacto</a>
+                <a href="#como-pedir">Cómo pedir</a>
+                <a href="#visitanos">Visítanos</a>
+                <a href="https://wa.me/573104130010?text=Hola,%20quisiera%20hacer%20una%20consulta" target="_blank" rel="noopener" class="menu-wa">
+                    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
+                </a>
             </nav>
         </div>
     </header>
 
-    <!-- Sección Hero (Principal) -->
-    <section id="inicio" class="hero">
-        <div class="container hero-content">
-            <div class="hero-text">
-                <span class="badge-alianza"><i class="fa-solid fa-handshake"></i> Aliados con Copidrogas</span>
-                <h1>La medicina a tu alcance</h1>
-                <p>Encuentra un amplio surtido en medicamentos, atención farmacéutica profesional y el respaldo que mereces en Mediacanoa, barrio Hernando García, Yotoco.</p>
-                <a href="https://wa.me/573104130010?text=Hola,%20me%20gustaría%20consultar%20la%20disponibilidad%20de%20un%20producto" target="_blank" class="btn-primary">
-                    <i class="fa-brands fa-whatsapp"></i> Escríbenos al WhatsApp
-                </a>
-            </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" alt="Farmacia Medisalud">
-            </div>
-        </div>
-    </section>
+    <main id="contenido">
 
-    <!-- Sección de Servicios -->
-    <section id="servicios" class="services">
-        <div class="container">
-            <h2>Nuestros Servicios</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <i class="fa-solid fa-pills"></i>
-                    <h3>Medicamentos y Surtido Copidrogas</h3>
-                    <p>Gran variedad de medicamentos y productos farmacéuticos de calidad garantizada.</p>
+        <!-- Hero -->
+        <section id="inicio" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <p class="alianza"><i class="fa-solid fa-handshake" aria-hidden="true"></i> Aliados con Copidrogas</p>
+                    <h1>La medicina a tu alcance</h1>
+                    <p class="hero-lead">Medicamentos, inyectología y orientación farmacéutica en Mediacanoa, barrio Hernando García, Yotoco. Pregúntanos antes de venir y te confirmamos si lo tenemos.</p>
                 </div>
-                <div class="service-card">
-                    <i class="fa-solid fa-syringe"></i>
-                    <h3>Inyectología</h3>
-                    <p>Aplicación segura y profesional de inyectables bajo normas de bioseguridad.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fa-solid fa-heart-pulse"></i>
-                    <h3>Control y Bienestar</h3>
-                    <p>Atención personalizada y orientación farmacéutica para el cuidado de tu familia.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Pie de Página -->
-    <footer id="contacto" class="footer">
-        <div class="container footer-content">
-            <div class="footer-col">
-                <h3>Farmacia Medisalud</h3>
-                <p><strong>La medicina a tu alcance.</strong> Tu farmacia de confianza en alianza con Copidrogas. Atención directa en punto de venta.</p>
+                <!-- Fórmula de consulta: abre WhatsApp con el mensaje listo -->
+                <form class="formula" id="consulta" aria-labelledby="formula-titulo">
+                    <div class="formula-head">
+                        <span class="rx" aria-hidden="true">℞</span>
+                        <div>
+                            <h2 id="formula-titulo">Consulta disponibilidad</h2>
+                            <p>Te respondemos por WhatsApp</p>
+                        </div>
+                    </div>
+                    <label for="producto">¿Qué medicamento o producto buscas?</label>
+                    <input id="producto" name="producto" type="text" autocomplete="off" placeholder="Ej: Acetaminofén 500 mg" aria-describedby="formula-error">
+                    <label for="nombre">Tu nombre <span class="opcional">(opcional)</span></label>
+                    <input id="nombre" name="nombre" type="text" autocomplete="given-name" placeholder="Ej: Martha">
+                    <p class="formula-error" id="formula-error" role="alert" hidden>Escribe el nombre del producto para enviar la consulta.</p>
+                    <button type="submit" class="btn-wa">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Preguntar por WhatsApp
+                    </button>
+                    <p class="formula-nota"><i class="fa-solid fa-store" aria-hidden="true"></i> Venta solo en el local. No hacemos domicilios.</p>
+                </form>
             </div>
-            <div class="footer-col">
-                <h3>Ubicación y Contacto</h3>
-                <p><i class="fa-solid fa-location-dot"></i> Mediacanoa, Barrio Hernando García, Yotoco, Valle del Cauca</p>
-                <p><i class="fa-solid fa-store"></i> Ventas exclusivas directamente en el establecimiento (No tenemos servicio a domicilio)</p>
-                <p><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/573104130010?text=Hola,%20quisiera%20hacer%20una%20consulta" target="_blank" style="color: #fff; text-decoration: none;">3104130010</a></p>
+        </section>
+
+        <!-- Servicios -->
+        <section id="servicios" class="servicios">
+            <div class="container">
+                <h2 class="titulo">Lo que encuentras aquí</h2>
+                <ul class="servicios-lista">
+                    <li>
+                        <i class="fa-solid fa-pills" aria-hidden="true"></i>
+                        <div>
+                            <h3>Medicamentos con surtido Copidrogas</h3>
+                            <p>Medicamentos de fórmula y venta libre, productos de cuidado personal y para toda la familia.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-syringe" aria-hidden="true"></i>
+                        <div>
+                            <h3>Inyectología</h3>
+                            <p>Aplicamos tus inyectables de forma segura, con normas de bioseguridad.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
+                        <div>
+                            <h3>Orientación farmacéutica</h3>
+                            <p>Te explicamos cómo tomar tus medicamentos y resolvemos tus dudas en el mostrador.</p>
+                        </div>
+                    </li>
+                </ul>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Farmacia Medisalud. Todos los derechos reservados.</p>
+        </section>
+
+        <!-- Cómo pedir -->
+        <section id="como-pedir" class="pasos">
+            <div class="container">
+                <h2 class="titulo">Cómo pedir</h2>
+                <ol class="pasos-lista">
+                    <li>
+                        <h3>Escríbenos</h3>
+                        <p>Mándanos por WhatsApp el nombre del medicamento o una foto de la fórmula.</p>
+                    </li>
+                    <li>
+                        <h3>Te confirmamos</h3>
+                        <p>Revisamos si lo tenemos y te decimos el precio.</p>
+                    </li>
+                    <li>
+                        <h3>Recógelo en la farmacia</h3>
+                        <p>Pasa por el local en Mediacanoa y lo tenemos listo para ti.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Visítanos -->
+        <section id="visitanos" class="visitanos">
+            <div class="container visitanos-grid">
+                <div class="visitanos-info">
+                    <h2 class="titulo">Visítanos</h2>
+                    <address>
+                        <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Mediacanoa, barrio Hernando García<br>Yotoco, Valle del Cauca</p>
+                        <p><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> <a href="https://wa.me/573104130010?text=Hola,%20quisiera%20hacer%20una%20consulta" target="_blank" rel="noopener">310 413 0010</a></p>
+                        <p><i class="fa-solid fa-store" aria-hidden="true"></i> Venta solo en el local. No hacemos domicilios.</p>
+                    </address>
+                    <div class="acciones">
+                        <a class="btn-wa" href="https://wa.me/573104130010?text=Hola,%20quisiera%20hacer%20una%20consulta" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Escribir por WhatsApp
+                        </a>
+                        <a class="btn-linea" href="tel:+573104130010">
+                            <i class="fa-solid fa-phone" aria-hidden="true"></i> Llamar
+                        </a>
+                        <a class="btn-linea" href="https://www.google.com/maps/search/?api=1&query=Mediacanoa%20Yotoco%20Valle%20del%20Cauca" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-diamond-turn-right" aria-hidden="true"></i> Cómo llegar
+                        </a>
+                    </div>
+                </div>
+                <div class="mapa">
+                    <iframe title="Mapa de Mediacanoa, Yotoco" src="https://maps.google.com/maps?q=Mediacanoa%2C%20Yotoco%2C%20Valle%20del%20Cauca&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <a href="#inicio" class="logo logo-claro">
+                <span class="logo-cross" aria-hidden="true"></span>
+                <span>Medisalud</span>
+            </a>
+            <p>La medicina a tu alcance. Tu farmacia de confianza en alianza con Copidrogas.</p>
+            <p class="footer-legal">&copy; 2026 Farmacia Medisalud. Todos los derechos reservados.</p>
         </div>
     </footer>
 
+    <!-- Botón flotante de WhatsApp -->
+    <a class="wa-flotante" href="https://wa.me/573104130010?text=Hola,%20quisiera%20hacer%20una%20consulta" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+    </a>
+
+    <script>
+        // Menú para celular
+        const toggle = document.querySelector('.menu-toggle');
+        const menu = document.getElementById('menu');
+        toggle.addEventListener('click', () => {
+            const abierto = toggle.getAttribute('aria-expanded') === 'true';
+            toggle.setAttribute('aria-expanded', String(!abierto));
+            toggle.setAttribute('aria-label', abierto ? 'Abrir menú' : 'Cerrar menú');
+            menu.classList.toggle('abierto', !abierto);
+        });
+        menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.setAttribute('aria-label', 'Abrir menú');
+            menu.classList.remove('abierto');
+        }));
+
+        // Consulta: arma el mensaje y abre WhatsApp
+        const form = document.getElementById('consulta');
+        const error = document.getElementById('formula-error');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const producto = form.producto.value.trim();
+            const nombre = form.nombre.value.trim();
+            if (!producto) {
+                error.hidden = false;
+                form.producto.focus();
+                return;
+            }
+            error.hidden = true;
+            const saludo = nombre ? `Hola, soy ${nombre}.` : 'Hola.';
+            const mensaje = `${saludo} ¿Tienen disponible: ${producto}?`;
+            window.open(`https://wa.me/573104130010?text=${encodeURIComponent(mensaje)}`, '_blank', 'noopener');
+        });
+    </script>
 </body>
 </html>
