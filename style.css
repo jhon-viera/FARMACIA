@@ -470,6 +470,38 @@ h1, h2, h3 {
     font-weight: 700;
 }
 
+.horario {
+    background: var(--menta);
+    border-left: 4px solid var(--verde);
+    border-radius: 0 var(--radio) var(--radio) 0;
+    padding: 18px 22px;
+    margin-bottom: 28px;
+}
+
+.horario h3 {
+    font-size: 1.2rem;
+    color: var(--verde);
+    margin-bottom: 12px;
+}
+
+.horario h3 i { margin-right: 8px; }
+
+.horario dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px 20px;
+}
+
+.horario dt { font-weight: 700; }
+
+.formula-nota + .formula-nota { margin-top: 6px; }
+.formula-nota a { color: var(--verde); font-weight: 700; }
+
+@media (max-width: 420px) {
+    .horario dl { grid-template-columns: 1fr; gap: 2px; }
+    .horario dd { margin-bottom: 10px; }
+}
+
 .acciones {
     display: flex;
     flex-wrap: wrap;
